@@ -1,0 +1,15 @@
+# Sorting Algorithm Visualizer — Docker + VNC
+#
+# Start:  docker compose up --build
+# VNC:   connect to localhost:5900 (no password by default)
+#
+# Other laptop: clone repo, run docker compose up --build, VNC to <that-laptop-ip>:5900
+
+services:
+  visualizer:
+    build: .
+    ports:
+      - "5900:5900"
+    environment:
+      # Optional: SDL audio off in container
+      - SDL_AUDIODRIVER=dummy
